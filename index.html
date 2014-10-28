@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <title>xip.io: wildcard DNS for everyone</title>
+    <link rel="stylesheet" href="xip.css">
+    <meta name="viewport" content="width=768">
+  </head>
+  <body>
+    <header><pre>
+            gg                       gg
+            &quot;&quot;                       &quot;&quot;
+,gg,   ,gg  gg   gg,gggg,            gg     ,ggggg,
+ &quot;&quot;8b,dP&quot;   88   I8P&quot;  &quot;Yb           88    dP&quot;  &quot;Y8ggg
+   ,88&quot;     88   I8'    ,8i          88   i8'    ,8I
+ ,dP&quot;Y8,  _,88,_,I8 _  ,d8'   d8b  _,88,_,d8,   ,d8'
+dP&quot;   &quot;Y888P&quot;&quot;Y8PI8 YY88888P  Y8P  8P&quot;&quot;Y8P&quot;Y8888P&quot;
+                 I8
+                 I8    <span class="dim">wildcard DNS for everyone</span><div class="cursor"> </div>
+                 &quot;&quot;
+    </pre></header>
+
+    <section><pre>
+<strong>What is xip.io?</strong>
+xip.io is a magic domain name that provides wildcard DNS
+for any IP address. Say your LAN IP address is <strong>10.0.0.1</strong>.
+Using xip.io,
+
+          <strong>10.0.0.1</strong>.xip.io   resolves to   10.0.0.1
+      www.<strong>10.0.0.1</strong>.xip.io   resolves to   10.0.0.1
+   mysite.<strong>10.0.0.1</strong>.xip.io   resolves to   10.0.0.1
+  foo.bar.<strong>10.0.0.1</strong>.xip.io   resolves to   10.0.0.1
+
+...and so on. You can use these domains to access virtual
+hosts on your development web server from devices on your
+local network, like iPads, iPhones, and other computers.
+No configuration required!
+    </pre></section>
+
+    <section><pre>
+<strong>How does it work?</strong>
+xip.io runs a <a href="https://github.com/sstephenson/xipd">custom DNS server</a> on the public Internet.
+When your computer looks up a xip.io domain, the xip.io
+DNS server extracts the IP address from the domain and
+sends it back in the response.
+    </pre></section>
+
+    <section><pre>
+<strong>Does xip.io cost anything?</strong>
+Nope! xip.io is a free service from <a href="https://basecamp.com/">Basecamp</a>, the
+creators of <a href="http://pow.cx/">Pow</a>. We were tired of jumping through hoops
+to test our apps on other devices and decided to solve
+the problem once and for all.
+    </pre></section>
+
+    <section class="copyright"><pre>
+&copy; 2012-2014 Sam Stephenson, Basecamp
+</pre></section>
+
+    <script type="text/javascript">
+      var clicky_site_ids = clicky_site_ids || [];
+      clicky_site_ids.push(66586773);
+      (function() {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = '//static.getclicky.com/js';
+      ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+      })();
+    </script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66586773ns.gif" /></p></noscript>
+  </body>
+</html>

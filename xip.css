@@ -1,0 +1,91 @@
+html {
+  background: #111;
+}
+
+body {
+  color: #090;
+  width: 480px;
+  margin: 50px auto;
+
+  font-family: Courier New, Courier, monospace;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (max-device-width: 480px) {
+  body {
+    margin: 0 0 50px 0;
+  }
+}
+
+header {
+  color: #0f0;
+}
+
+a {
+  color: #090;
+}
+
+a:hover {
+  background: #0f0;
+  color: #111;
+  text-decoration: none;
+}
+
+header span.dim {
+  color: #090;
+}
+
+section strong {
+  color: #0f0;
+}
+
+section.copyright {
+  color: #050;
+}
+
+div.cursor {
+  display: inline-block;
+  background: #111;
+  margin-left: 1px;
+
+  -webkit-animation: blink 2s linear 0s infinite;
+  -moz-animation: blink 2s linear 0s infinite;
+  -ms-animation: blink 2s linear 0s infinite;
+  -o-animation: blink 2s linear 0s infinite;
+}
+
+@-webkit-keyframes blink {
+  0%   { background: #0a0 }
+  47%  { background: #090 }
+  50%  { background: #000 }
+  97%  { background: #000 }
+  100% { background: #090 }
+}
+
+@-moz-keyframes blink {
+  0%   { background: #0a0 }
+  47%  { background: #090 }
+  50%  { background: #000 }
+  97%  { background: #000 }
+  100% { background: #090 }
+}
+
+@-ms-keyframes blink {
+  0%   { background: #0a0 }
+  47%  { background: #090 }
+  50%  { background: #000 }
+  97%  { background: #000 }
+  100% { background: #090 }
+}
+
+@-o-keyframes blink {
+  0%   { background: #0a0 }
+  47%  { background: #090 }
+  50%  { background: #000 }
+  97%  { background: #000 }
+  100% { background: #090 }
+}
