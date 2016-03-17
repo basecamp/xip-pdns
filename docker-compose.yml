@@ -1,0 +1,11 @@
+---
+version: '2'
+services:
+    xip:
+        build: .
+        volumes: 
+            - ./etc/xip-pdns.conf:/etc/xip-pdns.conf
+        ports:
+            - "53:53/tcp"
+            - "53:53/udp"
+
