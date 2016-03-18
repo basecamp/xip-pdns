@@ -1,0 +1,2 @@
+launch=pipe
+pipe-command=/usr/local/bin/xip-pdns /etc/xip-pdns.conf

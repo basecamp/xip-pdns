@@ -3,18 +3,20 @@ set -e
 shopt -s nocasematch
 
 #
-# Configuration
+# Source Configuration File Defaults
 #
-XIP_DOMAIN="xip.test"
-XIP_ROOT_ADDRESSES=( "127.0.0.1" )
-XIP_NS_ADDRESSES=( "127.0.0.1" )
-XIP_TIMESTAMP="0"
-XIP_TTL=300
-
 if [ -a "$1" ]; then
   source "$1"
 fi
 
+#
+# Configuration Default Settings (if not yet provided)
+#
+[ -z "$XIP_DOMAIN" ] && XIP_DOMAIN="xip.test"
+[ -z "$XIP_ROOT_ADDRESSES" ] && XIP_ROOT_ADDRESSES=( "127.0.0.1" )
+[ -z "$XIP_NS_ADDRESSES" ] && XIP_NS_ADDRESSES=( "127.0.0.1" )
+[ -z "$XIP_TIMESTAMP" ] && XIP_TIMESTAMP="0"
+[ -z "$XIP_TTL" ] && XIP_TTL=300
 
 #
 # Protocol helpers
