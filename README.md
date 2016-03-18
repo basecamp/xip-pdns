@@ -29,6 +29,9 @@ XIP_ROOT_ADDRESSES=( "1.2.3.1" )
 # `A` queries for these subdomains map to the corresponding addresses here.
 XIP_NS_ADDRESSES=( "1.2.3.4" "1.2.3.5" )
 
+# Subdomain prefix for NS Records (i.e. ns-1.xip.test)
+XIP_NS_SUBDOMAIN_PREFIX="ns-"
+
 # How long responses should be cached, in seconds.
 XIP_TTL=300
 ```
