@@ -35,7 +35,7 @@ XIP_TTL=300
 
 Then copy `etc/xip-pdns.backend.conf.example` to 
 `/etc/powerdns/pdns.d/xip.conf` (or the appropriate PowerDNS backend adapter 
-configuration location for your system(, and modify to meet your needs.
+configuration location for your system), and modify to meet your needs.
 
 Example: 
 
@@ -45,6 +45,9 @@ Example:
 launch=pipe
 pipe-command=/usr/local/bin/xip-pdns /etc/xip-pdns.conf
 ```
+
+Finally, copy `bin/xip-pdns` to `/usr/local/bin/xip-pdns` (or wherever you 
+prefer).
 
 Restart PowerDNS, and test.
 
