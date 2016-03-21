@@ -3,18 +3,21 @@ set -e
 shopt -s nocasematch
 
 #
-# Configuration
+# Source Configuration File Defaults
 #
-XIP_DOMAIN="xip.test"
-XIP_ROOT_ADDRESSES=( "127.0.0.1" )
-XIP_NS_ADDRESSES=( "127.0.0.1" )
-XIP_TIMESTAMP="0"
-XIP_TTL=300
-
 if [ -a "$1" ]; then
   source "$1"
 fi
 
+#
+# Configuration Default Settings (if not yet provided)
+#
+[ -z "$XIP_DOMAIN" ] && XIP_DOMAIN="xip.test"
+[ -z "$XIP_ROOT_ADDRESSES" ] && XIP_ROOT_ADDRESSES=( "127.0.0.1" )
+[ -z "$XIP_NS_ADDRESSES" ] && XIP_NS_ADDRESSES=( "127.0.0.1" )
+[ -z "$XIP_NS_SUBDOMAIN_PREFIX" ] && XIP_NS_SUBDOMAIN_PREFIX='ns-'
+[ -z "$XIP_TIMESTAMP" ] && XIP_TIMESTAMP="0"
+[ -z "$XIP_TTL" ] && XIP_TTL=300
 
 #
 # Protocol helpers
@@ -66,7 +69,7 @@ log() {
 # xip.io domain helpers
 #
 XIP_DOMAIN_PATTERN="(^|\.)${XIP_DOMAIN//./\.}\$"
-NS_SUBDOMAIN_PATTERN="^ns-([0-9]+)\$"
+NS_SUBDOMAIN_PATTERN="^${XIP_NS_SUBDOMAIN_PREFIX}([0-9]+)\$"
 IP_SUBDOMAIN_PATTERN="(^|\.)(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\$"
 BASE36_SUBDOMAIN_PATTERN="(^|\.)([a-z0-9]{1,7})\$"
 
@@ -116,14 +119,14 @@ resolve_base36_subdomain() {
 }
 
 answer_soa_query() {
-  send_answer "SOA" "admin.$XIP_DOMAIN ns-1.$XIP_DOMAIN $XIP_TIMESTAMP $XIP_TTL $XIP_TTL $XIP_TTL $XIP_TTL"
+  send_answer "SOA" "admin.$XIP_DOMAIN ${XIP_NS_SUBDOMAIN_PREFIX}1.$XIP_DOMAIN $XIP_TIMESTAMP $XIP_TTL $XIP_TTL $XIP_TTL $XIP_TTL"
 }
 
 answer_ns_query() {
   local i=1
   local ns_address
   for ns_address in "${XIP_NS_ADDRESSES[@]}"; do
-    send_answer "NS" "ns-$i.$XIP_DOMAIN"
+    send_answer "NS" "${XIP_NS_SUBDOMAIN_PREFIX}$i.$XIP_DOMAIN"
     let i+=1
   done
 }
