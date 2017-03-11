@@ -112,7 +112,7 @@ resolve_ip_subdomain() {
 resolve_base36_subdomain() {
   [[ "$SUBDOMAIN" =~ $BASE36_SUBDOMAIN_PATTERN ]] || true
   local ip=$(( 36#${BASH_REMATCH[2]} ))
-  printf "%d.%d.%d.%d" $(( ip&0xFF )) $(( (ip>>8)&0xFF )) $(( (ip>>16)&0xFF )) $(( (ip>>24)&0xFF ))
+  printf "%d.%d.%d.%d" $(( (ip>>24)&0xFF )) $(( (ip>>16)&0xFF )) $(( (ip>>8)&0xFF )) $(( ip&0xFF ))
 }
 
 answer_soa_query() {
