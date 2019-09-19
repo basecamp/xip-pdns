@@ -9,7 +9,7 @@ XIP_DOMAIN="xip.test"
 XIP_ROOT_ADDRESSES=( "127.0.0.1" )
 XIP_NS_ADDRESSES=( "127.0.0.1" )
 XIP_TIMESTAMP="0"
-XIP_TTL=300
+XIP_TTL=3600
 
 if [ -a "$1" ]; then
   source "$1"
