@@ -161,7 +161,7 @@ answer_subdomain_a_query_for() {
 #
 trap fail err
 read_helo
-send_cmd "OK" "xip.io PowerDNS pipe backend (protocol version 1)"
+send_cmd "OK" "xip.ninja Custom PowerDNS pipe backend (protocol version 1)"
 
 while read_query; do
   log "Query: type=$TYPE qname=$QNAME qclass=$QCLASS qtype=$QTYPE id=$ID ip=$IP"
