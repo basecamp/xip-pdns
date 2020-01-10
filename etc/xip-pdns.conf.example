@@ -15,4 +15,4 @@ XIP_ROOT_ADDRESSES=( "1.2.3.1" )
 XIP_NS_ADDRESSES=( "1.2.3.4" "1.2.3.5" )
 
 # How long responses should be cached, in seconds.
-XIP_TTL=300
+XIP_TTL=3600
