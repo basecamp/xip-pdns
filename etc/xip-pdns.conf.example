@@ -1,5 +1,5 @@
 # Increment this timestamp when the contents of the file change.
-XIP_TIMESTAMP="2014102800"
+XIP_TIMESTAMP="2020010501"
 
 # The top-level domain for which the name server is authoritative.
 XIP_DOMAIN="xip.test"
