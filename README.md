@@ -1,6 +1,6 @@
 #### xip-pdns
 
-This is the source of the [PowerDNS](http://powerdns.com/) pipe backend adapter powering [xip.io](http://xip.io/).
+This is the source of the [PowerDNS](http://powerdns.com/) pipe backend adapter powering [xip.ninja](http://xip.ninja/).
 
 Install this on your system, adjust [etc/xip-pdns.conf](etc/xip-pdns.conf.example) to your liking, and configure PowerDNS as follows:
 
