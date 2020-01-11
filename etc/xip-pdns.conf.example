@@ -2,17 +2,21 @@
 XIP_TIMESTAMP="2020010501"
 
 # The top-level domain for which the name server is authoritative.
-XIP_DOMAIN="xip.test"
+XIP_DOMAIN="xip.ninja"
 
-# The public IP addresses (e.g. for the web site) of the top-level domain.
+# The public IPv4 addresses (e.g. for the web site) of the top-level domain.
 # `A` queries for the top-level domain will return this list of addresses.
-XIP_ROOT_ADDRESSES=( "1.2.3.1" )
+XIP_ROOT_ADDRESSES=( "51.91.121.80" )
+
+# The public IPv6 addresses (e.g. for the web site) of the top-level domain.
+# `AAAA` queries for the top-level domain will return this list of addresses.
+XIP_V6_ROOT_ADDRESSES=( "2001:41d0:404:200::3632" )
 
 # The public IP addresses on which this xip-pdns server will run.
 # `NS` queries for the top-level domain will return this list of addresses.
 # Each entry maps to a 1-based subdomain of the format `ns-1`, `ns-2`, etc.
 # `A` queries for these subdomains map to the corresponding addresses here.
-XIP_NS_ADDRESSES=( "1.2.3.4" "1.2.3.5" )
+XIP_NS_ADDRESSES=( "51.91.121.80" )
 
 # How long responses should be cached, in seconds.
 XIP_TTL=3600
