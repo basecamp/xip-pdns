@@ -5,7 +5,7 @@
 - Remove Base36  
 
 ## Basis
-This is a piped backend provider using [PowerDNS](http://powerdns.com/) powering [xip.ninja](http://xip.ninja/).
+This is a piped backend provider using [PowerDNS](http://powerdns.com/) powering [xip.ninja](https://xip.ninja/).
 
 ## Installation
 
@@ -32,4 +32,6 @@ Effectively if you ask for 1.2.3.4.xip.ninja it will return 1.2.3.4 as the IP ad
 
 #### More information 
 
-visit [xip.ninja](http://xip.ninja/). 
+visit [xip.ninja](https://xip.ninja/). 
+
+For 🇫🇷 visit [my blog post](https://www.julienmousqueton.fr/un-enregistrement-dns-sans-nom-de-domaine) 
