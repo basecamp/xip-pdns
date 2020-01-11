@@ -33,6 +33,6 @@ Effectively if you ask for 1.2.3.4.xip.ninja it will return 1.2.3.4 as the IP ad
 
 #### More information 
 
-visit [xip.ninja](https://xip.ninja/). 
+Visit [xip.ninja](https://xip.ninja/). 
 
 For 🇫🇷 visit [my blog post](https://www.julienmousqueton.fr/un-enregistrement-dns-sans-nom-de-domaine) 
