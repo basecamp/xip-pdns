@@ -1,7 +1,8 @@
 # xip-pdns
 
 - based on [xip.io](https://github.com/basecamp/xip-pdns)
-- Support AAAA record  
+- Add AAAA record 
+- Remove Base36  
 
 ## Basis
 This is a piped backend provider using [PowerDNS](http://powerdns.com/) powering [xip.ninja](http://xip.ninja/).
@@ -28,3 +29,7 @@ pipe-command=/path/to/xip-pdns/bin/xip-pdns /path/to/xip-pdns/etc/xip-pdns.conf
 This will only respond to dns requests that end in xip.ninja.
 
 Effectively if you ask for 1.2.3.4.xip.ninja it will return 1.2.3.4 as the IP address. 
+
+#### More information 
+
+visit [xip.ninja](http://xip.ninja/). 
