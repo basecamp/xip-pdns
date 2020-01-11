@@ -7,6 +7,7 @@ shopt -s nocasematch
 #
 XIP_DOMAIN="xip.test"
 XIP_ROOT_ADDRESSES=( "127.0.0.1" )
+XIP_V6_ROOT_ADDRESES=( "::1" )
 XIP_NS_ADDRESSES=( "127.0.0.1" )
 XIP_TIMESTAMP="0"
 XIP_TTL=300
@@ -146,6 +147,13 @@ answer_root_a_query() {
   done
 }
 
+answer_root_aaaa_query() {
+  local address
+  for address in "${XIP_V6_ROOT_ADDRESSES[@]}"; do
+    send_answer "AAAA" "$address"
+ done
+}
+
 answer_subdomain_a_query_for() {
   local type="$1"
   local address="$(resolve_${type}_subdomain)"
@@ -180,6 +188,10 @@ while read_query; do
 
       if qtype_is "A"; then
         answer_root_a_query
+      fi
+      
+      if qtype_is "AAAA"; then
+        answer_root_aaaa_query
       fi
 
     elif qtype_is "A"; then
